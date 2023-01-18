@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Gruppo&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Gruppo", cursive;
+  font-size: 1.25rem;
+}
+
+:root {
+  --mainColor: #616161;
+  --mainColorLight: #98bbf9;
+  --secondaryColor: #929191;
+  --textColor: rgb(245, 246, 248);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 85px;
+  padding: 0 2rem;
+  background-color: var(--mainColor);
+  color: var(--textColor);
+}
+nav {
+  margin: auto;
+}
+nav a {
+  margin: 0 3.5rem;
+  color: var(--textColor);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+a:hover {
+  color: var(--mainColorLight);
+}
+
+#Home {
+  height: 175px;
+  position: absolute;
+  top: -0.58rem;
+  left: 2rem;
+  z-index: 3;
+  transition: transform 0.5s, filter 0.5s;
+}
+#Home:hover {
+  filter: brightness(110%);
+  transform: scale(1.04);
+  cursor: pointer;
+}
+header .nav-btn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
+}
+
+@media only screen and (max-width: 1300px) {
+  header {
+    height: 50px;
+  }
+  header .nav-btn {
+    transition: 1s;
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    top: 0rem;
+    right: 2rem;
+  }
+  .ghost {
+    transition: 1s;
+    transform: translateY(-2rem);
+  }
+  #Home {
+    height: 120px;
+    position: absolute;
+    top: -0.65rem;
+    left: 0.7rem;
+    z-index: 2;
+    margin-left: -0.75rem;
+  }
+  header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5 rem;
+    background-color: var(--mainColor);
+    transition: 1s;
+    transform: translateY(-100vh);
+    z-index: 2;
+  }
+
+  header .responsive_nav {
+    transform: none;
+  }
+  nav .nav-close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    /* display: none; */
+  }
+  nav a {
+    padding: 0 0 2rem 0;
+  }
+  header .nav-btn:hover {
+    color: var(--mainColorLight);
+  }
+}
